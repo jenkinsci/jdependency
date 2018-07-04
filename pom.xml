@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.vafer</groupId>
+    <groupId>io.jenkins.org.vafer</groupId>
     <artifactId>jdependency</artifactId>
     <name>jdependency</name>
-    <version>1.4</version>
+    <version>1.4-jenkins-1</version>
     <description>This project provides an API to analyse class dependencies</description>
     <url>http://github.com/tcurdt/jdependency</url>
     <developers>
@@ -31,14 +31,14 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:tcurdt/jdependency.git</connection>
-        <developerConnection>scm:git:git@github.com:tcurdt/jdependency.git</developerConnection>
-        <url>http://github.com/tcurdt/jdependency</url>
-        <tag>jdependency-1.2</tag>
+        <connection>scm:git:git@github.com:rsandell/jdependency.git</connection>
+        <developerConnection>scm:git:git@github.com:rsandell/jdependency.git</developerConnection>
+        <url>http://github.com/rsandell/jdependency</url>
+        <tag>HEAD</tag>
     </scm>
     <properties>
         <test.workingDirectory>${project.build.directory}/test-working-directory</test.workingDirectory>
-        <asm.version>6.1.1</asm.version>
+        <asm.version>6.2</asm.version>
         <additionalparam>-Xdoclint:none</additionalparam>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -101,52 +101,6 @@
                     <workingDirectory>${test.workingDirectory}</workingDirectory>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <minimizeJar>true</minimizeJar>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                            <artifactSet>
-                                <includes>
-                                    <include>commons-io:commons-io</include>
-                                    <include>org.ow2.asm:asm</include>
-                                    <include>org.ow2.asm:asm-analysis</include>
-                                    <include>org.ow2.asm:asm-commons</include>
-                                    <include>org.ow2.asm:asm-util</include>
-                                    <include>org.ow2.asm:asm-tree</include>
-                                </includes>
-                            </artifactSet>
-                            <relocations>
-                                <relocation>
-                                    <pattern>org.apache.commons</pattern>
-                                    <shadedPattern>org.vafer.jdeb.shaded.commons</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>org.ow2.asm</pattern>
-                                    <shadedPattern>org.vafer.jdeb.shaded.asm</shadedPattern>
-                                </relocation>
-                            </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -160,8 +114,14 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>asm6</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <!--<dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
             <version>${asm.version}</version>
@@ -185,7 +145,7 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm-tree</artifactId>
             <version>${asm.version}</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
     <distributionManagement>
         <snapshotRepository>

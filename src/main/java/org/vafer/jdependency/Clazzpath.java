@@ -29,7 +29,7 @@ import java.util.jar.JarInputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.objectweb.asm.ClassReader;
+import org.kohsuke.asm6.ClassReader;
 import org.vafer.jdependency.asm.DependenciesClassAdapter;
 
 public final class Clazzpath {

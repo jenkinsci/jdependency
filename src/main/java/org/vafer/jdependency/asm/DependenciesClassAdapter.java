@@ -18,13 +18,13 @@ package org.vafer.jdependency.asm;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.objectweb.asm.AnnotationVisitor;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.FieldVisitor;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.commons.ClassRemapper;
-import org.objectweb.asm.commons.Remapper;
+import org.kohsuke.asm6.AnnotationVisitor;
+import org.kohsuke.asm6.ClassVisitor;
+import org.kohsuke.asm6.FieldVisitor;
+import org.kohsuke.asm6.MethodVisitor;
+import org.kohsuke.asm6.Opcodes;
+import org.kohsuke.asm6.commons.ClassRemapper;
+import org.kohsuke.asm6.commons.Remapper;
 
 public final class DependenciesClassAdapter extends ClassRemapper {
 
