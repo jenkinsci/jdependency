@@ -6,7 +6,7 @@
     <name>jdependency</name>
     <version>1.4-jenkins-1</version>
     <description>This project provides an API to analyse class dependencies</description>
-    <url>http://github.com/tcurdt/jdependency</url>
+    <url>https://github.com/jenkinsci/jdependency</url>
     <developers>
         <developer>
             <id>tcurdt</id>
@@ -31,9 +31,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:rsandell/jdependency.git</connection>
-        <developerConnection>scm:git:git@github.com:rsandell/jdependency.git</developerConnection>
-        <url>http://github.com/rsandell/jdependency</url>
+        <connection>scm:git:git@github.com:jenkinsci/jdependency.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/jdependency.git</developerConnection>
+        <url>http://github.com/jenkinsci/jdependency</url>
         <tag>HEAD</tag>
     </scm>
     <properties>
@@ -121,41 +121,16 @@
             <artifactId>asm6</artifactId>
             <version>${asm.version}</version>
         </dependency>
-        <!--<dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>${asm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-analysis</artifactId>
-            <version>${asm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-commons</artifactId>
-            <version>${asm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-util</artifactId>
-            <version>${asm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-tree</artifactId>
-            <version>${asm.version}</version>
-        </dependency>-->
     </dependencies>
     <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>maven.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>maven.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
     <reporting>
         <plugins>
