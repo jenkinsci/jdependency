@@ -25,7 +25,7 @@ import java.util.Set;
 import java.util.jar.JarInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import org.objectweb.asm.ClassReader;
+import org.kohsuke.asm6.ClassReader;
 
 import org.vafer.jdependency.asm.DependenciesClassAdapter;
 

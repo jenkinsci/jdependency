@@ -19,7 +19,7 @@ package org.vafer.jdependency.asm;
  * interal - do not use
  */
 
-public class Remapper extends org.objectweb.asm.commons.Remapper {
+public class Remapper extends org.kohsuke.asm6.commons.Remapper {
 
     public String map(String name) {
         return super.map(name);
